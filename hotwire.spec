@@ -16,6 +16,7 @@ BuildArch:	noarch
 BuildRequires:	python
 BuildRequires:	python-devel
 BuildRequires:	python-setuptools
+BuildRequires:	desktop-file-utils
 # Due to a bug in the software, remove dependency when the bug is fixed: http://groups.google.com/group/hotwire-shell/browse_thread/thread/cde063a55d3fff50
 Requires:	python-setuptools
 Requires:	python-vte
