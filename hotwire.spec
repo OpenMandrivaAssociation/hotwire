@@ -64,4 +64,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/%{name}.desktop
 %{py_puresitedir}/%{name}
 %{py_puresitedir}/%{name}_ui
-%{py_puresitedir}/%{name}-%{version}-py2.5.egg-info
+%{py_puresitedir}/%{name}-%{version}-py%pyver.egg-info
