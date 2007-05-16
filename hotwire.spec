@@ -6,6 +6,7 @@ Name:		%{name}
 Summary:	Hybrid text/graphical shell for developers and sysadmins
 Version:	%{version} 
 Release:	%{release} 
+Epoch:		1
 Source0:	http://www.verbum.org-a.googlepages.com/%{name}-%{version}.tar.bz2
 URL:		http://www.verbum.org-a.googlepages.com/hotwire
 Group:		Terminals
