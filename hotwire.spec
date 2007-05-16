@@ -1,5 +1,5 @@
 %define name	hotwire
-%define	version	0.333
+%define	version	0.34
 %define	release	%mkrel 1
 
 Name:		%{name}
@@ -17,8 +17,6 @@ BuildRequires:	python
 BuildRequires:	python-devel
 BuildRequires:	python-setuptools
 BuildRequires:	desktop-file-utils
-# Due to a bug in the software, remove dependency when the bug is fixed: http://groups.google.com/group/hotwire-shell/browse_thread/thread/cde063a55d3fff50
-Requires:	python-setuptools
 Requires:	python-vte
 
 %description
@@ -37,14 +35,11 @@ python setup.py build
 rm -rf %{buildroot}
 mkdir -p %{buildroot}%py_puresitedir
 mkdir -p %{buildroot}%{_datadir}/applications
-PYTHONPATH=$PYTHONPATH:%{buildroot}%py_puresitedir python setup.py install --single-version-externally-managed --root=$RPM_BUILD_ROOT
-
-# Install the .desktop file, since the crappy build system can't do it.
-
-install -m644 %{name}.desktop %{buildroot}%{_datadir}/applications/%{name}.desktop
+PYTHONPATH=$PYTHONPATH:%{buildroot}%py_puresitedir python setup.py install --root=$RPM_BUILD_ROOT
 
 desktop-file-install --vendor="" \
   --add-category="X-MandrivaLinux-MoreApplications-Shells" \
+  --remove-category="Applications" \
   --dir $RPM_BUILD_ROOT%{_datadir}/applications \
 $RPM_BUILD_ROOT%{_datadir}/applications/*
 
@@ -63,5 +58,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/%{name}
 %{_datadir}/applications/%{name}.desktop
 %{py_puresitedir}/%{name}
-%{py_puresitedir}/%{name}_ui
 %{py_puresitedir}/%{name}-%{version}-py%pyver.egg-info
