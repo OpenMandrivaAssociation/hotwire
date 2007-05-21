@@ -1,5 +1,5 @@
 %define name	hotwire
-%define	version	0.34
+%define	version	0.444
 %define	release	%mkrel 1
 
 Name:		%{name}
@@ -59,4 +59,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/%{name}
 %{_datadir}/applications/%{name}.desktop
 %{py_puresitedir}/%{name}
+%{py_puresitedir}/%{name}_ui
 %{py_puresitedir}/%{name}-%{version}-py%pyver.egg-info
