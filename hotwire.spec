@@ -1,6 +1,6 @@
 %define name	hotwire
 %define	version	0.556
-%define	release	%mkrel 1
+%define	release	%mkrel 2
 
 Name:		%{name}
 Summary:	Hybrid text/graphical shell for developers and sysadmins
@@ -18,7 +18,7 @@ BuildRequires:	python
 BuildRequires:	python-devel
 BuildRequires:	python-setuptools
 BuildRequires:	desktop-file-utils
-Requires:	python-vte
+Requires:	python-vte dbus-python
 
 %description
 Hotwire is a shell replacement for gnome-terminal/xterm + sh + ssh for 
