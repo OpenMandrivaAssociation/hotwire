@@ -1,14 +1,14 @@
 %define name	hotwire
 %define	version	0.556
-%define	release	%mkrel 2
+%define	release	%mkrel 3
 
 Name:		%{name}
 Summary:	Hybrid text/graphical shell for developers and sysadmins
 Version:	%{version} 
 Release:	%{release} 
 Epoch:		1
-Source0:	http://www.verbum.org-a.googlepages.com/%{name}-%{version}.tar.bz2
-URL:		http://www.verbum.org-a.googlepages.com/hotwire
+Source0:	http://submind.verbum.org/download/%{name}-%{version}.tar.bz2
+URL:		http://submind.verbum.org/hotwire/wiki
 Group:		Terminals
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 License:	GPL
