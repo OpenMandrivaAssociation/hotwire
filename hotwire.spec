@@ -1,14 +1,14 @@
 %define name	hotwire
-%define	version	0.556
-%define	release	%mkrel 3
+%define	version	0.567
+%define	release	%mkrel 1
 
 Name:		%{name}
 Summary:	Hybrid text/graphical shell for developers and sysadmins
 Version:	%{version} 
 Release:	%{release} 
 Epoch:		1
-Source0:	http://submind.verbum.org/download/%{name}-%{version}.tar.bz2
-URL:		http://submind.verbum.org/hotwire/wiki
+Source0:	http://hotwire-shell.org/download/%{name}-%{version}.zip
+URL:		http://hotwire-shell.org
 Group:		Terminals
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 License:	GPL
@@ -18,7 +18,7 @@ BuildRequires:	python
 BuildRequires:	python-devel
 BuildRequires:	python-setuptools
 BuildRequires:	desktop-file-utils
-Requires:	python-vte dbus-python
+Requires:	python-vte dbus-python gnome-python-gnomevfs
 
 %description
 Hotwire is a shell replacement for gnome-terminal/xterm + sh + ssh for 
