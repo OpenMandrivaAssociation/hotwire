@@ -58,6 +58,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc README
 %{_bindir}/%{name}
 %{_datadir}/applications/%{name}.desktop
+%{_iconsdir}/hicolor/24x24/apps/%{name}.png
 %{py_puresitedir}/%{name}
 %{py_puresitedir}/%{name}_ui
 %{py_puresitedir}/%{name}-%{version}-py%pyver.egg-info
