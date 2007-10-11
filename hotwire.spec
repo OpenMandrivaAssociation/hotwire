@@ -1,5 +1,5 @@
 %define name	hotwire
-%define	version	0.590
+%define	version	0.595
 %define	release	%mkrel 1
 
 Name:		%{name}
@@ -11,7 +11,7 @@ Source0:	http://hotwire-shell.org/download/%{name}-%{version}.zip
 URL:		http://hotwire-shell.org
 Group:		Terminals
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-License:	GPL
+License:	GPL+
 BuildArch:	noarch
 
 BuildRequires:	python
