@@ -1,5 +1,5 @@
 %define name	hotwire
-%define	version	0.595
+%define	version	0.599
 %define	release	%mkrel 1
 
 Name:		%{name}
@@ -7,7 +7,7 @@ Summary:	Hybrid text/graphical shell for developers and sysadmins
 Version:	%{version} 
 Release:	%{release} 
 Epoch:		1
-Source0:	http://hotwire-shell.org/download/%{name}-%{version}.zip
+Source0:	http://hotwire-shell.googlecode.com/files/%{name}-%{version}.zip
 URL:		http://hotwire-shell.org
 Group:		Terminals
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -17,8 +17,9 @@ BuildArch:	noarch
 BuildRequires:	python
 BuildRequires:	python-devel
 BuildRequires:	python-setuptools
-BuildRequires:	desktop-file-utils
-Requires:	python-vte dbus-python gnome-python-gnomevfs
+Requires:	python-vte 
+Requires:	dbus-python 
+Requires:	gnome-python-gnomevfs
 
 %description
 Hotwire is a shell replacement for gnome-terminal/xterm + sh + ssh for 
@@ -34,29 +35,24 @@ python setup.py build
 
 %install
 rm -rf %{buildroot}
-mkdir -p %{buildroot}%py_puresitedir
-mkdir -p %{buildroot}%{_datadir}/applications
-PYTHONPATH=$PYTHONPATH:%{buildroot}%py_puresitedir python setup.py install --root=$RPM_BUILD_ROOT
-
-desktop-file-install --vendor="" \
-  --add-category="X-MandrivaLinux-MoreApplications-Shells" \
-  --remove-category="Applications" \
-  --dir $RPM_BUILD_ROOT%{_datadir}/applications \
-$RPM_BUILD_ROOT%{_datadir}/applications/*
+python setup.py install --root=%{buildroot}
 
 %post
 %{update_menus}
+%{update_icon_cache hicolor}
 
 %postun
 %{clean_menus}
+%{clean_icon_cache hicolor}
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
 %doc README
 %{_bindir}/%{name}
+%{_bindir}/%{name}-editor
 %{_datadir}/applications/%{name}.desktop
 %{_iconsdir}/hicolor/24x24/apps/%{name}.png
 %{py_puresitedir}/%{name}
