@@ -1,5 +1,5 @@
 %define name	hotwire
-%define	version	0.599
+%define	version	0.600
 %define	release	%mkrel 1
 
 Name:		%{name}
@@ -53,6 +53,7 @@ rm -rf %{buildroot}
 %doc README
 %{_bindir}/%{name}
 %{_bindir}/%{name}-editor
+%{_datadir}/%{name}
 %{_datadir}/applications/%{name}.desktop
 %{_iconsdir}/hicolor/24x24/apps/%{name}.png
 %{py_puresitedir}/%{name}
