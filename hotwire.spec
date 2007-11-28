@@ -17,6 +17,7 @@ BuildArch:	noarch
 BuildRequires:	python
 BuildRequires:	python-devel
 BuildRequires:	python-setuptools
+BuildRequires:	intltool
 Requires:	python-vte 
 Requires:	dbus-python 
 Requires:	gnome-python-gnomevfs
