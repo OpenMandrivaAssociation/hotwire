@@ -1,5 +1,5 @@
 %define name	hotwire
-%define	version	0.600
+%define	version	0.620
 %define	release	%mkrel 1
 
 Name:		%{name}
