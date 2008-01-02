@@ -10,6 +10,7 @@ Epoch:		1
 Source0:	http://hotwire-shell.googlecode.com/files/%{name}-%{version}.zip
 URL:		http://hotwire-shell.org
 Group:		Terminals
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 License:	GPL+
 BuildArch:	noarch
 
