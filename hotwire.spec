@@ -1,5 +1,5 @@
 %define name	hotwire
-%define	version	0.620
+%define	version	0.700
 %define	release	%mkrel 1
 
 Name:		%{name}
@@ -52,11 +52,12 @@ rm -rf %{buildroot}
 %files
 %defattr(-,root,root)
 %doc README
-%{_bindir}/%{name}
-%{_bindir}/%{name}-editor
+%{_bindir}/*
 %{_datadir}/%{name}
 %{_datadir}/applications/%{name}.desktop
-%{_iconsdir}/hicolor/24x24/apps/%{name}.png
+%{_iconsdir}/hicolor/24x24/apps/*
 %{py_puresitedir}/%{name}
+%{py_puresitedir}/hotapps
+%{py_puresitedir}/hotvte
 %{py_puresitedir}/%{name}_ui
 %{py_puresitedir}/%{name}-%{version}-py%pyver.egg-info
