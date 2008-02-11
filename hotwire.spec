@@ -1,5 +1,5 @@
 %define name	hotwire
-%define	version	0.700
+%define	version	0.710
 %define	release	%mkrel 1
 
 Name:		%{name}
@@ -32,11 +32,11 @@ but text based.
 %setup -q
 
 %build
-python setup.py build
+%__python setup.py build
 
 %install
-rm -rf %{buildroot}
-python setup.py install --root=%{buildroot}
+%__rm -rf %{buildroot}
+%__python setup.py install --root=%{buildroot}
 
 %post
 %{update_menus}
@@ -47,7 +47,7 @@ python setup.py install --root=%{buildroot}
 %{clean_icon_cache hicolor}
 
 %clean
-rm -rf %{buildroot}
+%__rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
