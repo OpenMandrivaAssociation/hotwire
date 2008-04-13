@@ -1,5 +1,5 @@
 %define name	hotwire
-%define	version	0.710
+%define	version	0.721
 %define	release	%mkrel 1
 
 Name:		%{name}
@@ -11,7 +11,7 @@ Source0:	http://hotwire-shell.googlecode.com/files/%{name}-%{version}.zip
 URL:		http://hotwire-shell.org
 Group:		Terminals
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-License:	GPL+
+License:	GPLv2+
 BuildArch:	noarch
 
 BuildRequires:	python
@@ -51,7 +51,7 @@ but text based.
 
 %files
 %defattr(-,root,root)
-%doc README
+%doc README COPYING*
 %{_bindir}/*
 %{_datadir}/%{name}
 %{_datadir}/applications/%{name}.desktop
