@@ -1,6 +1,6 @@
 %define name	hotwire
 %define	version	0.721
-%define	release	%mkrel 4
+%define	release	%mkrel 5
 
 Name:		%{name}
 Summary:	Hybrid text/graphical shell for developers and sysadmins
