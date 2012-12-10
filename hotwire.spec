@@ -1,16 +1,14 @@
 %define name	hotwire
 %define	version	0.721
-%define	release	%mkrel 5
+%define	release	5
 
 Name:		%{name}
 Summary:	Hybrid text/graphical shell for developers and sysadmins
 Version:	%{version} 
 Release:	%{release} 
-Epoch:		1
 Source0:	http://hotwire-shell.googlecode.com/files/%{name}-%{version}.zip
 URL:		http://hotwire-shell.org
 Group:		Terminals
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 License:	GPLv2+
 BuildArch:	noarch
 
@@ -38,20 +36,6 @@ but text based.
 %__rm -rf %{buildroot}
 %__python setup.py install --root=%{buildroot}
 
-%if %mdkversion < 200900
-%post
-%{update_menus}
-%{update_icon_cache hicolor}
-%endif
-
-%if %mdkversion < 200900
-%postun
-%{clean_menus}
-%{clean_icon_cache hicolor}
-%endif
-
-%clean
-%__rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
@@ -64,4 +48,4 @@ but text based.
 %{py_puresitedir}/hotapps
 %{py_puresitedir}/hotvte
 %{py_puresitedir}/%{name}_ui
-%{py_puresitedir}/%{name}-%{version}-py%pyver.egg-info
+%{py_puresitedir}/%{name}-%{version}-py2.7.egg-info
