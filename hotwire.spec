@@ -7,7 +7,7 @@ Summary:	Hybrid text/graphical shell for developers and sysadmins
 Version:	%{version} 
 Release:	%{release} 
 Source0:	http://hotwire-shell.googlecode.com/files/%{name}-%{version}.zip
-URL:		http://hotwire-shell.org
+URL:		https://hotwire-shell.org
 Group:		Terminals
 License:	GPLv2+
 BuildArch:	noarch
